@@ -1,0 +1,15 @@
+.container
+ {
+   border-style: solid;
+   border-width: 4px;
+   border-color: deeppink;
+   background:green;
+   border-radius: 5px;
+ }
+
+ .child {
+   width: 100px;
+   color:ghostwhite;
+   background-color:fuchsia;
+   border-radius: 5px;
+ }
