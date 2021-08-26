@@ -1,2 +1,39 @@
 <p>transfer-form works!</p>
-
+<form [formGroup]="firstFormGroup">
+  <mat-card>
+    <div fxLayout="row" fxLayout.lt-sm="column"  fxLayoutAlign="flex-start center" class="full-width">
+<div fxFlex>
+    Lorem ipsum dolor sit amet, an sea similique maiestatis inciderint, decore recusabo sea in. Dolore putant laboramus duo in. Mundi doctus aliquid ut ius. At vero illum vocent vis. Ius eros argumentum cu.
+  </div>
+  <div fxFlex>
+    <div fxLayout="row" fxLayoutAlign="flex-start center" class="full-width">
+      <div fxFlex>
+        <mat-form-field class="input-row" appearance="outline">
+          <mat-select placeholder="Expenses" formControlName="expenses" required>
+            <mat-option value="1">a</mat-option>
+            <mat-option value="2">b</mat-option>
+            <mat-option value="3">c</mat-option>
+            <mat-option value="4">d</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="flex-start center" class="full-width">
+      <div fxFlex>
+        <mat-form-field class="input-row" appearance="outline">
+          <mat-select placeholder="Expenses" formControlName="expenses" required>
+            <mat-option value="1">a</mat-option>
+            <mat-option value="2">b</mat-option>
+            <mat-option value="3">c</mat-option>
+            <mat-option value="4">d</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div fxFlex>
+        Select
+      </div>
+    </div>
+  </div>
+</div>
+</mat-card>
+</form>
