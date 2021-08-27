@@ -7,12 +7,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from './material.module';
 import { SelectBoxComponent } from './select-box/select-box.component';
+import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TransferFormComponent,
-    SelectBoxComponent
+    SelectBoxComponent,
+    ReactiveFormComponent
   ],
   imports: [
     BrowserModule,

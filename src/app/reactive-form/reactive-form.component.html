@@ -1,0 +1,18 @@
+<p>reactive-form works!</p>
+
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <mat-form-field>
+    <mat-label>Select Website</mat-label>
+
+    <mat-select formControlName="website">
+      <mat-option *ngFor="let website of websites" [value]="website.value">
+        {{ website.viewValue }}
+      </mat-option>
+    </mat-select>
+    <mat-error *ngIf="form.get('website')?.hasError('required')">
+      Please select website
+    </mat-error>
+  </mat-form-field>
+  <button mat-raised-button color="accent">Submit</button>
+</form>
+<h4>https://stackoverflow.com/questions/54139039/form-validation-with-mat-error-on-angular</h4>
