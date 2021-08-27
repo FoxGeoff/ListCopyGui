@@ -35,4 +35,5 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ### Task: Dropdown boxes
 
 1. Ref:<https://stackblitz.com/edit/angular-btjbqw-w7ouh5?file=app%2Fform-field-appearance-example.html>
-2. ddd   
+2. Select panel dynamic color example
+3. Ref:<https://stackblitz.com/edit/angular-afwwfc?file=src%2Fapp%2Fselect-panel-class-example.css> 
