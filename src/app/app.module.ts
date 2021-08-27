@@ -6,11 +6,13 @@ import { TransferFormComponent } from './transfer-form/transfer-form.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from './material.module';
+import { SelectBoxComponent } from './select-box/select-box.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TransferFormComponent
+    TransferFormComponent,
+    SelectBoxComponent
   ],
   imports: [
     BrowserModule,

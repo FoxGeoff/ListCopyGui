@@ -1,0 +1,14 @@
+<p>select-box works!</p>
+<h4>Angular Basic mat-select Example</h4>
+<h6>
+  https://www.itsolutionstuff.com/post/angular-10-material-select-dropdown-exampleexample.html
+</h6>
+
+<mat-form-field>
+  <mat-label>Select Website</mat-label>
+  <mat-select>
+    <mat-option *ngFor="let website of websites" [value]="website.value">
+      {{ website.viewValue }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
