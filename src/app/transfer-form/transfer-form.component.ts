@@ -59,6 +59,7 @@ export class TransferFormComponent implements OnInit, AfterViewInit {
   // https://stackblitz.com/edit/angular-focus-select-afterload?file=app%2Fselect-overview-example.html
   // https://stackoverflow.com/questions/54593925/how-to-set-auto-focus-in-mat-select
   @ViewChild("fff", { static: false }) nameField!: MatSelect;
+  
   ngAfterViewInit() {
     this.nameField.focus();
   }
