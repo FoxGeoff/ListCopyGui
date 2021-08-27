@@ -1,39 +1,137 @@
 <p>transfer-form works!</p>
-<form [formGroup]="firstFormGroup">
-  <mat-card>
-    <div fxLayout="row" fxLayout.lt-sm="column"  fxLayoutAlign="flex-start center" class="full-width">
-<div fxFlex>
-    Lorem ipsum dolor sit amet, an sea similique maiestatis inciderint, decore recusabo sea in. Dolore putant laboramus duo in. Mundi doctus aliquid ut ius. At vero illum vocent vis. Ius eros argumentum cu.
-  </div>
-  <div fxFlex>
-    <div fxLayout="row" fxLayoutAlign="flex-start center" class="full-width">
-      <div fxFlex>
-        <mat-form-field class="input-row" appearance="outline">
-          <mat-select placeholder="Expenses" formControlName="expenses" required>
-            <mat-option value="1">a</mat-option>
-            <mat-option value="2">b</mat-option>
-            <mat-option value="3">c</mat-option>
-            <mat-option value="4">d</mat-option>
-          </mat-select>
-        </mat-form-field>
-      </div>
+<div class="container">
+  <form [formGroup]="firstFormGroup">
+    <div class="row" fxLayout="row">
+      <!--Customer-->
+      <mat-card class="item">
+        <div fxLayout="row" fxLayoutGap="18px">
+          <div class="notes" fxFlex>
+            Lorem ipsum dolor sit amet, an sea similique maiestatis inciderint,
+            decore recusabo sea in. Dolore putant laboramus duo in.
+          </div>
+          <div fxFlex>
+            <div fxLayout="row" fxLayoutAlign="flex-start center">
+              <div class="drop-down" fxFlex>
+                <mat-form-field class="input-row" appearance="outline">
+                  <mat-select
+                    placeholder="Company"
+                    formControlName="Company"
+                    required
+                  >
+                    <mat-option
+                      *ngFor="let cust of customers"
+                      value="cust.company"
+                      >{{ cust.company }}</mat-option
+                    >
+                  </mat-select>
+                </mat-form-field>
+              </div>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="flex-start center">
+              <div class="drop-down" fxFlex>
+                <mat-form-field class="input-row" appearance="outline">
+                  <mat-select
+                    placeholder="Address"
+                    formControlName="Address"
+                    required
+                  >
+                    <mat-option
+                      *ngFor="let cust of customers"
+                      value="cust.address"
+                      >{{ cust.address }}</mat-option
+                    >
+                  </mat-select>
+                </mat-form-field>
+              </div>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="flex-start center">
+              <div class="drop-down" fxFlex>
+                <mat-form-field class="input-row" appearance="outline">
+                  <mat-select
+                    placeholder="Phone"
+                    formControlName="Phone"
+                    required
+                  >
+                    <mat-option
+                      *ngFor="let cust of customers"
+                      value="cust.phone"
+                      >{{ cust.phone }}</mat-option
+                    >
+                  </mat-select>
+                </mat-form-field>
+              </div>
+            </div>
+            <button mat-raised-button color="accent">Submit</button>
+          </div>
+        </div>
+      </mat-card>
+      <!-- Account -->
+      <mat-card class="item">
+        <div fxLayout="row" fxLayoutGap="18px">
+          <div class="notes" fxFlex>
+            Lorem ipsum dolor sit amet, an sea similique maiestatis inciderint,
+            decore recusabo sea in. Dolore putant laboramus duo in.
+          </div>
+          <div class="dropDown" fxFlex>
+            <div
+              fxLayout="row"
+              fxLayoutGap="18px"
+              fxLayoutAlign="flex-start center"
+            >
+              <div fxFlex>
+                <mat-form-field class="input-row" appearance="outline">
+                  <mat-select
+                    placeholder="Company"
+                    formControlName="Company"
+                    required
+                  >
+                    <mat-option
+                      *ngFor="let cust of customers"
+                      value="cust.company"
+                      >{{ cust.company }}</mat-option
+                    >
+                  </mat-select>
+                </mat-form-field>
+              </div>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="flex-start center">
+              <div fxFlex>
+                <mat-form-field class="input-row" appearance="outline">
+                  <mat-select
+                    placeholder="Address"
+                    formControlName="Address"
+                    required
+                  >
+                    <mat-option
+                      *ngFor="let cust of customers"
+                      value="cust.address"
+                      >{{ cust.address }}</mat-option
+                    >
+                  </mat-select>
+                </mat-form-field>
+              </div>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="flex-start center">
+              <div fxFlex>
+                <mat-form-field class="input-row" appearance="outline">
+                  <mat-select
+                    placeholder="Phone"
+                    formControlName="Phone"
+                    required
+                  >
+                    <mat-option
+                      *ngFor="let cust of customers"
+                      value="cust.phone"
+                      >{{ cust.phone }}</mat-option
+                    >
+                  </mat-select>
+                </mat-form-field>
+              </div>
+            </div>
+            <button mat-raised-button color="accent">Submit</button>
+          </div>
+        </div>
+      </mat-card>
     </div>
-    <div fxLayout="row" fxLayoutAlign="flex-start center" class="full-width">
-      <div fxFlex>
-        <mat-form-field class="input-row" appearance="outline">
-          <mat-select placeholder="Expenses" formControlName="expenses" required>
-            <mat-option value="1">a</mat-option>
-            <mat-option value="2">b</mat-option>
-            <mat-option value="3">c</mat-option>
-            <mat-option value="4">d</mat-option>
-          </mat-select>
-        </mat-form-field>
-      </div>
-      <div fxFlex>
-        <button mat-raised-button color="accent">Submit</button>
-      </div>
-    </div>
-  </div>
+  </form>
 </div>
-</mat-card>
-</form>
