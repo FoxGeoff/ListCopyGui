@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatSelect } from '@angular/material/select';
 import { Customer } from '../models/customer';
 
 
@@ -16,7 +17,7 @@ interface Website {
   templateUrl: './transfer-form.component.html',
   styleUrls: ['./transfer-form.component.css']
 })
-export class TransferFormComponent implements OnInit {
+export class TransferFormComponent implements OnInit, AfterViewInit {
   firstFormGroup!: FormGroup;
 
   customers: Customer[] = [
@@ -54,5 +55,11 @@ export class TransferFormComponent implements OnInit {
       effectiveTime: ['', Validators.required],
       judgment: ['', Validators.required]
     });
+  }
+  // https://stackblitz.com/edit/angular-focus-select-afterload?file=app%2Fselect-overview-example.html
+  // https://stackoverflow.com/questions/54593925/how-to-set-auto-focus-in-mat-select
+  @ViewChild("fff", { static: false }) nameField!: MatSelect;
+  ngAfterViewInit() {
+    this.nameField.focus();
   }
 }
