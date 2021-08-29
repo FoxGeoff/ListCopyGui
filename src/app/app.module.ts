@@ -8,13 +8,15 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from './material.module';
 import { SelectBoxComponent } from './select-box/select-box.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
+import { AccountBuilderComponent } from './account-builder/account-builder.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TransferFormComponent,
     SelectBoxComponent,
-    ReactiveFormComponent
+    ReactiveFormComponent,
+    AccountBuilderComponent
   ],
   imports: [
     BrowserModule,

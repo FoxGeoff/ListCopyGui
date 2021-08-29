@@ -1,0 +1,42 @@
+<div class="container" fxLayout="row" fxLayoutGap="18px">
+  <mat-card class="card">
+    <h3>Select a customer</h3>
+    <form [formGroup]="formCustomer" (ngSubmit)="submitCustomer()">
+      <mat-form-field>
+        <mat-label>Select Customer</mat-label>
+
+        <mat-select formControlName="customer">
+          <mat-option *ngFor="let cust of customers" [value]="cust.contact">
+            {{ cust.contact }}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="formCustomer.get('cust')?.hasError('required')">
+          Please select a customer
+        </mat-error>
+      </mat-form-field>
+      <button mat-raised-button color="accent">Submit</button>
+    </form>
+  </mat-card>
+
+  <mat-card class="card">
+    <h3>{{accountTitle}}</h3>
+    <form [formGroup]="formAccount" (ngSubmit)="submitAccount()">
+      <mat-form-field>
+        <mat-label>{{accountLabel}}</mat-label>
+
+        <mat-select formControlName="customer">
+          <mat-option
+            *ngFor="let account of Accounts"
+            [value]="account.company"
+          >
+            {{ account.company }}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="formAccount.get('account')?.hasError('required')">
+          Please select a customer
+        </mat-error>
+      </mat-form-field>
+      <button mat-raised-button color="accent">Submit</button>
+    </form>
+  </mat-card>
+</div>
