@@ -17,13 +17,33 @@
       <button mat-raised-button color="accent">Submit</button>
     </form>
 
-    <!-- Template Form Customer -->
-    <form *ngIf="customerPick">
-      <mat-form-field appearance="fill">
-        <mat-label>Company</mat-label>
-        <input matInput [(ngModel)]="customerPick.company" name="customer" />
-      </mat-form-field>
-    </form>
+    <!-- Template Form Customer (template)-->
+    <div class="container">
+      <form *ngIf="customerPick" (ngSubmit)="submitAccountCustomer()">
+        <mat-form-field>
+          <mat-label>Company</mat-label>
+          <input matInput [(ngModel)]="customerPick.company" name="customer" />
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Address</mat-label>
+          <input matInput [(ngModel)]="customerPick.address" name="address" />
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Contact</mat-label>
+          <input matInput [(ngModel)]="customerPick.contact" name="contact" />
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Notes</mat-label>
+          <textarea matInput [(ngModel)]="customerPick.notes" name="notes">
+          </textarea>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>phone</mat-label>
+          <input matInput [(ngModel)]="customerPick.phone" name="phone" />
+        </mat-form-field>
+        <button mat-raised-button color="accent">Add to Account</button>
+      </form>
+    </div>
   </mat-card>
 
   <mat-card class="card">

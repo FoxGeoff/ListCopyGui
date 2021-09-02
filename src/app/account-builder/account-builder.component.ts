@@ -81,5 +81,9 @@ export class AccountBuilderComponent implements OnInit {
       this.accountLabel = "New Account";
     }
   }
+
+  submitAccountCustomer() {
+    // TODO
+  }
 }
 
