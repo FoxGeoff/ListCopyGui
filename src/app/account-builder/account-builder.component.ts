@@ -15,6 +15,9 @@ export class AccountBuilderComponent implements OnInit {
   accountTitle = "Select an account";
   accountLabel = "Select Account";
 
+  //Customer form
+  customerPick!: Customer;
+
   customers: Customer[] = [
     {
       company: 'ItSolutionStuff.com',
@@ -59,9 +62,16 @@ export class AccountBuilderComponent implements OnInit {
   }
 
   submitCustomer() {
-    if (!this.formCustomer.untouched) {
-      console.log(this.formCustomer.value);
-    }
+    const cust = this.formCustomer.controls.customer.value as Customer;
+    console.log(cust);
+
+    this.customerPick = {
+      company: cust.company,
+      address: cust.address,
+      contact: cust.contact,
+      notes: cust.notes,
+      phone: cust.phone
+    };
   }
   submitAccount() {
     if (this.formCustomer.touched) {
@@ -72,3 +82,4 @@ export class AccountBuilderComponent implements OnInit {
     }
   }
 }
+

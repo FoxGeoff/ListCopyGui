@@ -6,7 +6,7 @@
         <mat-label>Select Customer</mat-label>
 
         <mat-select formControlName="customer">
-          <mat-option *ngFor="let cust of customers" [value]="cust.contact">
+          <mat-option *ngFor="let cust of customers" [value]="cust">
             {{ cust.contact }}
           </mat-option>
         </mat-select>
@@ -16,19 +16,24 @@
       </mat-form-field>
       <button mat-raised-button color="accent">Submit</button>
     </form>
+
+    <!-- Template Form Customer -->
+    <form *ngIf="customerPick">
+      <mat-form-field appearance="fill">
+        <mat-label>Company</mat-label>
+        <input matInput [(ngModel)]="customerPick.company" name="customer" />
+      </mat-form-field>
+    </form>
   </mat-card>
 
   <mat-card class="card">
-    <h3>{{accountTitle}}</h3>
+    <h3>{{ accountTitle }}</h3>
     <form [formGroup]="formAccount" (ngSubmit)="submitAccount()">
       <mat-form-field>
-        <mat-label>{{accountLabel}}</mat-label>
+        <mat-label>{{ accountLabel }}</mat-label>
 
         <mat-select formControlName="customer">
-          <mat-option
-            *ngFor="let account of Accounts"
-            [value]="account.company"
-          >
+          <mat-option *ngFor="let account of Accounts" [value]="account">
             {{ account.company }}
           </mat-option>
         </mat-select>
