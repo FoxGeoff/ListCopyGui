@@ -17,6 +17,10 @@ export class AccountBuilderComponent implements OnInit {
 
   //Customer form
   customerPick!: Customer;
+  //Account form
+  AccountPick!: Account;
+  AccountContacts: Customer[] = [];
+  areAccountDetails = true;
 
   customers: Customer[] = [
     {
@@ -83,7 +87,19 @@ export class AccountBuilderComponent implements OnInit {
   }
 
   submitAccountCustomer() {
-    // TODO
+    if (this.areAccountDetails) {
+      this.AccountPick = {
+        company: this.customerPick.company,
+        address: this.customerPick.address,
+        phone: this.customerPick.address,
+        notes: this.customerPick.notes,
+        contacts: this.AccountContacts
+      }
+      this.areAccountDetails = false;
+    }
+    this.customerPick.company = this.AccountPick.company;
+    this.AccountPick.contacts.push(this.customerPick);
+    console.log(this.AccountPick);
   }
 }
 
