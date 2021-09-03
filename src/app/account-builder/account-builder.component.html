@@ -22,7 +22,7 @@
       <form *ngIf="customerPick" (ngSubmit)="submitAccountCustomer()">
         <mat-form-field>
           <mat-label>Company</mat-label>
-          <input matInput [(ngModel)]="customerPick.company" name="customer" />
+          <input matInput [(ngModel)]="customerPick.company" name="company" />
         </mat-form-field>
         <mat-form-field>
           <mat-label>Address</mat-label>
@@ -53,7 +53,7 @@
         <mat-label>{{ accountLabel }}</mat-label>
 
         <mat-select formControlName="customer">
-          <mat-option *ngFor="let account of Accounts" [value]="account">
+          <mat-option *ngFor="let account of accounts" [value]="account">
             {{ account.company }}
           </mat-option>
         </mat-select>
@@ -63,5 +63,37 @@
       </mat-form-field>
       <button mat-raised-button color="accent">Submit</button>
     </form>
+    <!-- Template Form Customer (template)-->
+    <div class="container">
+      <form #itemForm="ngForm"  *ngIf="accountPick" (ngSubmit)="submitAddToAccounts()">
+        <mat-form-field>
+          <mat-label>Company</mat-label>
+          <input matInput [(ngModel)]="accountPick.company" name="customer" />
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Address</mat-label>
+          <input matInput [(ngModel)]="accountPick.address" name="address" />
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Notes</mat-label>
+          <textarea matInput [(ngModel)]="accountPick.notes" name="notes">
+          </textarea>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>phone</mat-label>
+          <input matInput [(ngModel)]="accountPick.phone" name="phone" />
+        </mat-form-field>
+        <!---  Customer List -->
+        <div *ngFor="let cust of accountPick.contacts">
+          <mat-form-field>
+            <mat-label>Contact</mat-label>
+            <input matInput [(ngModel)]="cust.contact" name="custContact" />
+          </mat-form-field>
+        </div>
+        <button mat-raised-button color="accent">Add to Account</button>
+        <button mat-raised-button color="primary" (click)="cancel()">Cancel</button>
+      </form>
+    </div>
   </mat-card>
 </div>

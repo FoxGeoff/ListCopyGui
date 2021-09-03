@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Account } from '../models/account';
 import { Customer } from './../models/customer';
@@ -18,7 +18,8 @@ export class AccountBuilderComponent implements OnInit {
   //Customer form
   customerPick!: Customer;
   //Account form
-  AccountPick!: Account;
+  accountPick!: Account;
+
   AccountContacts: Customer[] = [];
   areAccountDetails = true;
 
@@ -46,7 +47,7 @@ export class AccountBuilderComponent implements OnInit {
     } as Customer,
   ];
 
-  Accounts: Account[] = [];
+  accounts: Account[] = [];
 
   constructor(private fb: FormBuilder) {
 
@@ -88,7 +89,7 @@ export class AccountBuilderComponent implements OnInit {
 
   submitAccountCustomer() {
     if (this.areAccountDetails) {
-      this.AccountPick = {
+      this.accountPick = {
         company: this.customerPick.company,
         address: this.customerPick.address,
         phone: this.customerPick.address,
@@ -97,9 +98,15 @@ export class AccountBuilderComponent implements OnInit {
       }
       this.areAccountDetails = false;
     }
-    this.customerPick.company = this.AccountPick.company;
-    this.AccountPick.contacts.push(this.customerPick);
-    console.log(this.AccountPick);
+    this.accountPick.contacts.push(this.customerPick);
+    console.log(this.accountPick);
+  }
+
+  submitAddToAccounts() {
+    this.accounts.push(this.accountPick);
+  }
+
+  cancel() {
+    
   }
 }
-
