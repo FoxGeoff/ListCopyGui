@@ -38,4 +38,4 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 2. Select panel dynamic color example
 3. Ref:<https://stackblitz.com/edit/angular-afwwfc?file=src%2Fapp%2Fselect-panel-class-example.css>
 
-### Task: Customer / Account forms to display data
+### Task: Customer / Account forms to display-data
